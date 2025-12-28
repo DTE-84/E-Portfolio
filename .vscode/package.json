@@ -1,0 +1,14 @@
+{
+  "name": "e-portfolio",
+  "version": "1.0.0",
+  "description": "Drew T Ernst portfolio",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint . --ext .js",
+    "format": "prettier --write \"**/*.{js,json,css,md,html}\"",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [],
+  "author": "Drew T Ernst",
+  "license": "MIT"
+}
