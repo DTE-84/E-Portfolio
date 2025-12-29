@@ -104,6 +104,10 @@ textarea:focus {
   color: rgb(25, 94, 221) !important;
 }
 
+.orange {
+  color: rgb(240, 98, 33) !important;
+}
+
 .link__hover-effect {
   position: relative;
 }
@@ -209,7 +213,7 @@ nav,
 }
 
 .social__link {
-  background-color: rgb(25, 94, 221);
+  background-color: rgb(149, 25, 221);
   color: white;
   padding: 6px;
   width: 32px;
