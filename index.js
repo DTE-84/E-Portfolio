@@ -3,54 +3,52 @@
 // eoNdQKhN5WKH1PvAf
 
 
-
 let isModalOpen = false;
 let contrastToggle = false;
 const scaleFactor = 1 / 20;
 
 function moveBackground(event) {
-  const shapes = document.querySelectorAll('.shape');
+  const shapes = document.querySelectorAll(".shape");
   const x = event.clientX * scaleFactor;
   const y = event.clientY * scaleFactor;
 
   for (let i = 0; i < shapes.length; ++i) {
     const isOdd = i % 2 !== 0;
     const boolInt = isOdd ? -1 : 1;
-    shapes[i].style.transform = `translate(${x * boolInt}px, ${
-      y * boolInt
-    }px) rotate(${x * boolInt * 10}deg)`;
+    shapes[i].style.transform = `translate(${x * boolInt}px, ${y * boolInt}px) rotate(${x * boolInt * 10}deg)`
   }
 }
 
 function toggleContrast() {
   contrastToggle = !contrastToggle;
   if (contrastToggle) {
-    document.body.classList += ' dark-theme';
-  } else {
-    document.body.classList.remove('dark-theme');
+    document.body.classList += " dark-theme"
+  }
+  else {
+    document.body.classList.remove("dark-theme")
   }
 }
 
 function contact(event) {
   event.preventDefault();
-  const loading = document.querySelector('.modal__overlay--loading');
-  const success = document.querySelector('.modal__overlay--success');
-  loading.classList += ' modal__overlay--visible';
+  const loading = document.querySelector(".modal__overlay--loading");
+  const success = document.querySelector(".modal__overlay--success");
+  loading.classList += " modal__overlay--visible";
   emailjs
     .sendForm(
-      'service_akgmg6r',
-      'template_nx4fvkb',
+      "service_akgmg6r",
+      "template_nx4fvkb",
       event.target,
-      'user_eoNdQKhN5WKH1PvAf'
+      "user_eoNdQKhN5WKH1PvAf"
     )
     .then(() => {
-      loading.classList.remove(' modal__overlay--visible');
-      success.classList += ' modal__overlay--visible';
+      loading.classList.remove("modal__overlay--visible");
+      success.classList += " modal__overlay--visible";
     })
     .catch(() => {
-      loading.classList.remove('modal__overlay--visible');
+      loading.classList.remove("modal__overlay--visible");
       alert(
-        'The email service is temporarily unavailable. Please contact me directly on drew.t.ernst@gmail.com'
+        "The email service is temporarily unavailable. Please contact me directly on drew.t.ernst@gmail.com"
       );
     });
 }
@@ -58,17 +56,8 @@ function contact(event) {
 function toggleModal() {
   if (isModalOpen) {
     isModalOpen = false;
-    return document.body.classList.remove('modal--open');
+    return document.body.classList.remove("modal--open");
   }
   isModalOpen = true;
-  document.body.classList += ' modal--open';
-}
-function openModal() {
-  document.getElementById('modalOverlay').style.display = 'flex';
-  document.body.classList.add('modal-open');
-}
-
-function closeModal() {
-  document.getElementById('modalOverlay').style.display = 'none';
-  document.body.classList.remove('modal-open');
+  document.body.classList += " modal--open";
 }
