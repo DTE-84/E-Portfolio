@@ -1,7 +1,3 @@
-// template_nx4fvkb
-// service_akgmg6r
-// eoNdQKhN5WKH1PvAf
-
 
 let isModalOpen = false;
 let contrastToggle = false;
@@ -34,14 +30,14 @@ function contact(event) {
   const loading = document.querySelector(".modal__overlay--loading");
   const success = document.querySelector(".modal__overlay--success");
   loading.classList += " modal__overlay--visible";
-  emailjs
+   emailjs
     .sendForm(
-      "service_akgmg6r",
-      "template_nx4fvkb",
+      'service_akgmg6r',
+      'template_nx4fvkb',
       event.target,
-      "user_eoNdQKhN5WKH1PvAf"
+      "zmPiRmxRkScwdiYFX"
     )
-    .then(() => {
+        .then(() => {
       loading.classList.remove("modal__overlay--visible");
       success.classList += " modal__overlay--visible";
     })
