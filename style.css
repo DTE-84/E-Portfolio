@@ -513,7 +513,7 @@ Modal
 
 .modal__about {
   background-color: rgb(245, 245, 245);
-  transform: translateX(-110%);
+  transform: translateX(-110%)
 }
 
 .modal__languages {

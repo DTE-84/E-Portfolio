@@ -1,3 +1,9 @@
+// template_nx4fvkb
+// service_akgmg6r
+// eoNdQKhN5WKH1PvAf
+
+
+
 let isModalOpen = false;
 let contrastToggle = false;
 const scaleFactor = 1 / 20;
@@ -32,19 +38,19 @@ function contact(event) {
   loading.classList += ' modal__overlay--visible';
   emailjs
     .sendForm(
-      'service_80ih0if',
-      'template_d9refyl',
+      'service_akgmg6r',
+      'template_nx4fvkb',
       event.target,
-      'user_K1PoFs8pB2YVWStDxrUls'
+      'user_eoNdQKhN5WKH1PvAf'
     )
     .then(() => {
-      loading.classList.remove('modal__overlay--visible');
+      loading.classList.remove(' modal__overlay--visible');
       success.classList += ' modal__overlay--visible';
     })
     .catch(() => {
       loading.classList.remove('modal__overlay--visible');
       alert(
-        'The email service is temporarily unavailable. Please contact me directly on email@email.com'
+        'The email service is temporarily unavailable. Please contact me directly on drew.t.ernst@gmail.com'
       );
     });
 }

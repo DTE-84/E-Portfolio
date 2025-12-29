@@ -7,7 +7,15 @@
     <title>DTE Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/66240d21b2.js" crossorigin="anonymous"></script>
-    <script src="index.js" defer></script>
+    <script src="index.js"></script>
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("user_eoNdQKhN5WKH1PvAf");
+       })();
+</script>
 </head>
 
 <body>
@@ -90,6 +98,7 @@
                 </div>
             </div>
             <div class="modal__half modal__contact">
+               
                 <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
                 <h3 class="modal__title modal__title--contact">
                     Let's have a chat!
@@ -103,7 +112,7 @@
                         <input class="input" name="user_name" type="text" required></input>
                     </div>
                     <div class="form__item">
-                        <label class="form__item--label">Email</label>
+                        <label class="form__item--label">E-mail</label>
                         <input class="input" name="user_email" type="email" required></input>
                     </div>
                     <div class="form__item">
@@ -111,14 +120,17 @@
                         <textarea class="input" name="message" type="text" required></textarea>
                     </div>
                     <button id="contact__submit" class="form__submit">
-                        Send it my way
+                        Send 
                     </button>
                 </form>
+                
                 <div class="modal__overlay modal__overlay--loading">
                     <i class="fas fa-spinner"></i>
                 </div>
+                                   </div>
                 <div class="modal__overlay modal__overlay--success">
-                    Thanks for the message! Looking forward to speaking to you soon.
+                      Thanks for the message! Looking forward to speaking to you soon.
+               
                 </div>
             </div>
         </div>
