@@ -29,7 +29,7 @@ button {
 }
 
 section {
-  background-color: rgb(245, 245, 245);
+  background-color: rgb(224, 203, 174);
   transition: all 300ms ease;
 }
 
@@ -103,6 +103,8 @@ textarea:focus {
 .blue {
   color: rgb(25, 94, 221) !important;
 }
+
+
 
 .orange {
   color: rgb(240, 98, 33) !important;
@@ -213,7 +215,7 @@ nav,
 }
 
 .social__link {
-  background-color: rgb(149, 25, 221);
+  background-color: rgb(141, 41, 199);
   color: white;
   padding: 6px;
   width: 32px;
