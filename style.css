@@ -513,29 +513,6 @@ nav {
   margin-bottom: 60px;
 }
 
-.carousel {
-scroll-marker-group: after;
-}
-
-.carousel:: scroll-marker-group {
-display: flex;
-justify-content: center;
-gap: 6px;
-}
-
-::scroll-marker:target-current {
-background: #58A6FF;
-}
-
-.item::scroll-marker {
-content: "";
-width: 10px;
-height: 10px;
-border-radius: 50%;
-}
-
-
-
 .project {
   margin-bottom: 135px;
 }
@@ -793,4 +770,49 @@ footer {
   .modal__half {
     padding: 40px;
   }
+}
+
+/* CAROUSEL STYLES */
+.carousel-container {
+    position: relative;
+    max-width: 1100px; /* Match the .row max-width */
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    display: none;
+    animation: slide-in 1s ease-in-out;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.dot-container {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: transparent;
+    border: 2px solid rgb(141, 41, 199);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: rgb(141, 41, 199);
 }
