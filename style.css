@@ -513,6 +513,29 @@ nav {
   margin-bottom: 60px;
 }
 
+.carousel {
+scroll-marker-group: after;
+}
+
+.carousel:: scroll-marker-group {
+display: flex;
+justify-content: center;
+gap: 6px;
+}
+
+::scroll-marker:target-current {
+background: #58A6FF;
+}
+
+.item::scroll-marker {
+content: "";
+width: 10px;
+height: 10px;
+border-radius: 50%;
+}
+
+
+
 .project {
   margin-bottom: 135px;
 }
