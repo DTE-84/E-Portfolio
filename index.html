@@ -4,6 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@800&display=swap"
+      rel="stylesheet"
+    />
     <title>DTE Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/66240d21b2.js" crossorigin="anonymous"></script>
@@ -18,54 +28,55 @@
 </head>
 
 <body>
-    
-    
-            
+
+
+
     <section id="landing-page" onmousemove="moveBackground(event)">
         <nav>
             <figure>
                 <img id="personal-logo" src="./assets/DSLASHElogo.webp" alt="">
             </figure>
-            
+
             <ul class="nav__link--list">
+                
                 <li class="nav__link" onclick="toggleModal()">
                     <a href="#" class="
             nav__link--anchor
             link__hover-effect
             link__hover-effect--black
-          ">About</a>
+          "><span>A</span><span>B</span><span>O</span><span>U</span><span>T</span></a>
                 </li>
                 <li class="nav__link">
                     <a href="#projects" class="
             nav__link--anchor
             link__hover-effect
             link__hover-effect--black
-          ">Projects</a>
+          "><span>P</span><span>r</span><span>o</span><span>j</span><span>e</span><span>c</span><span>t</span><span>s</span></a>
                 </li>
                 <li class="nav__link" onclick="toggleModal()">
                     <a href="#" class="
             nav__link--anchor
             link__hover-effect
             link__hover-effect--black
-          ">Contact</a>
+          "><span>C</span><span>o</span><span>n</span><span>t</span><span>a</span><span>c</span><span>t</span></a>
                 </li>
                 <li class="nav__link click" onclick="toggleContrast()">
                     <a href="#" class="
-            nav__link--anchor
+            nav__link--anchor-color
             link__hover-effect
             link__hover-effect--black
           "><i class="fas fa-adjust"></i></a>
                 </li>
             </ul>
         </nav>
-         
-       
-               
-            
+
+
+
+
         <header class="header">
-            
+
             <div class="header__content">
-              
+
                 <h1 class="title">Hey,</h1>
                 <h1 class="title blue">I'm Drew Ernst</h1>
                 <p class="header__para">I'm a <b class="orange">Frontend Software Engineer</b> with a strong passion for
@@ -84,102 +95,102 @@
                     </a>
                 </div>
             </div>
-            </section>
-        </header>
-        <a href="#">
-            <button class="mail__btn click" onclick="toggleModal()">
-                <i class="fas fa-envelope"></i>
-            </button>
-        </a>
-        <a href="#projects" class="scroll">
-            <div class="scroll__icon click"></div>
-        </a>
-        <div class="modal">
-            <div class="modal__half modal__about">
-                <h3 class="modal__title modal__title--about">Here's a bit about me.</h3>
-                <h4 class="modal__sub-title modal__sub-title--about">Frontend Software Engineer.</h4>
-                <p class="modal__para">
-                    I'm a 41 year old<span class="blue"> Frontend Software Engineer</span>. I love the challenge of
-                    working on and solving extremely difficult engineering problems.
-                    <br>
-                    I'm currently learning to become a<span class="blue"> Full Stack Software Engineer</span> with a
-                    focus on the frontend. I was taught by a team consisting of some of the most <span
-                        class="blue">talented</span> and<span class="blue"> experienced</span> software
-                    engineers,</span> including David Bragg at Frontend Simplified Mentorship Program.
-                </p>
-                <div class="modal__languages">
-                    <figure class="modal__language">
-                        <img class="modal__language--img"
-                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png"
-                            alt="">
-                        <span class="language__name">HTML</span>
-                    </figure>
-                    <figure class="modal__language">
-                        <img class="modal__language--img"
-                            src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png" alt="">
-                        <span class="language__name">CSS</span>
-                    </figure>
-                    <figure class="modal__language">
-                        <img class="modal__language--img"
-                            src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png" alt="">
-                        <span class="language__name">JavaScript</span>
-                    </figure>
-                    <figure class="modal__language">
-                        <img class="modal__language--img"
-                            src="https://cdn.iconscout.com/icon/free/png-256/typescript-3521774-2945272.png" alt="">
-                        <span class="language__name">TypeScript</span>
-                    </figure>
-                    <figure class="modal__language">
-                        <img class="modal__language--img"
-                            src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png"
-                            alt="">
-                        <span class="language__name">React</span>
-                    </figure>
+    </section>
+    </header>
+    <a href="#">
+        <button class="mail__btn click" onclick="toggleModal()">
+            <i class="fas fa-envelope"></i>
+        </button>
+    </a>
+    <a href="#projects" class="scroll">
+        <div class="scroll__icon click"></div>
+    </a>
+    <div class="modal">
+        <div class="modal__half modal__about">
+            <h3 class="modal__title modal__title--about">Here's a bit about me.</h3>
+            <h4 class="modal__sub-title modal__sub-title--about">Frontend Software Engineer.</h4>
+            <p class="modal__para">
+                I'm a 41 year old<span class="blue"> Frontend Software Engineer</span>. I love the challenge of
+                working on and solving extremely difficult engineering problems.
+                <br>
+                I'm currently learning to become a<span class="blue"> Full Stack Software Engineer</span> with a
+                focus on the frontend. I was taught by a team consisting of some of the most <span
+                    class="blue">talented</span> and<span class="blue"> experienced</span> software
+                engineers,</span> including David Bragg at Frontend Simplified Mentorship Program.
+            </p>
+            <div class="modal__languages">
+                <figure class="modal__language">
+                    <img class="modal__language--img"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png"
+                        alt="">
+                    <span class="language__name">HTML</span>
+                </figure>
+                <figure class="modal__language">
+                    <img class="modal__language--img"
+                        src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png" alt="">
+                    <span class="language__name">CSS</span>
+                </figure>
+                <figure class="modal__language">
+                    <img class="modal__language--img"
+                        src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png" alt="">
+                    <span class="language__name">JavaScript</span>
+                </figure>
+                <figure class="modal__language">
+                    <img class="modal__language--img"
+                        src="https://cdn.iconscout.com/icon/free/png-256/typescript-3521774-2945272.png" alt="">
+                    <span class="language__name">TypeScript</span>
+                </figure>
+                <figure class="modal__language">
+                    <img class="modal__language--img"
+                        src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png"
+                        alt="">
+                    <span class="language__name">React</span>
+                </figure>
 
-                </div>
-            </div>
-            <div class="modal__half modal__contact">
-                <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
-                <h3 class="modal__title modal__title--contact">
-                    Let's have a chat!
-                </h3>
-                <h3 class="modal__sub-title modal__sub-title--contact">
-                    I'm currently open to new opportunities.
-                </h3>
-                <form id="contact__form" onsubmit="contact(event)">
-                    <div class="form__item">
-                        <label class="form__item--label">Name</label>
-                        <input class="input" name="user_name" type="text" required></input>
-                    </div>
-                    <div class="form__item">
-                        <label class="form__item--label">E-mail</label>
-                        <input class="input" name="user_email" type="email" required></input>
-                    </div>
-                    <div class="form__item">
-                        <label class="form__item--label">Message</label>
-                        <textarea class="input" name="message" type="text" required></textarea>
-                    </div>
-                    <button id="contact__submit" class="form__submit">
-                        Send
-                    </button>
-                </form>
-                <div class="modal__overlay modal__overlay--loading">
-                    <i class="fas fa-spinner"></i>
-                </div>
-                <div class="modal__overlay modal__overlay--success">
-                    Thanks for the message! Looking forward to speaking to you soon.
-                </div>
             </div>
         </div>
-        <img src="./assets/semi circle.svg" class="shape shape--0">
-        <img src="./assets/circle.svg" class="shape shape--1">
-        <img src="./assets/squiggly.svg" class="shape shape--2">
-        <img src="./assets/circle.svg" class="shape shape--3">
-        <img src="./assets/triangle.svg" class="shape shape--4">
-        <img src="./assets/circle.svg" class="shape shape--5">
-        <img src="./assets/squiggly.svg" class="shape shape--6">
-        <img src="./assets/circle.svg" class="shape shape--7">
-        <img src="./assets/semi circle.svg" class="shape shape--8">
+        <div class="modal__half modal__contact">
+            <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+            <h3 class="modal__title modal__title--contact">
+                Let's have a chat!
+            </h3>
+            <h3 class="modal__sub-title modal__sub-title--contact">
+                I'm currently open to new opportunities.
+            </h3>
+            <form id="contact__form" onsubmit="contact(event)">
+                <div class="form__item">
+                    <label class="form__item--label">Name</label>
+                    <input class="input" name="user_name" type="text" required></input>
+                </div>
+                <div class="form__item">
+                    <label class="form__item--label">E-mail</label>
+                    <input class="input" name="user_email" type="email" required></input>
+                </div>
+                <div class="form__item">
+                    <label class="form__item--label">Message</label>
+                    <textarea class="input" name="message" type="text" required></textarea>
+                </div>
+                <button id="contact__submit" class="form__submit">
+                    Send
+                </button>
+            </form>
+            <div class="modal__overlay modal__overlay--loading">
+                <i class="fas fa-spinner"></i>
+            </div>
+            <div class="modal__overlay modal__overlay--success">
+                Thanks for the message! Looking forward to speaking to you soon.
+            </div>
+        </div>
+    </div>
+    <img src="./assets/semi circle.svg" class="shape shape--0">
+    <img src="./assets/circle.svg" class="shape shape--1">
+    <img src="./assets/squiggly.svg" class="shape shape--2">
+    <img src="./assets/circle.svg" class="shape shape--3">
+    <img src="./assets/triangle.svg" class="shape shape--4">
+    <img src="./assets/circle.svg" class="shape shape--5">
+    <img src="./assets/squiggly.svg" class="shape shape--6">
+    <img src="./assets/circle.svg" class="shape shape--7">
+    <img src="./assets/semi circle.svg" class="shape shape--8">
     </section>
     <section id="projects">
         <div class="container">
@@ -223,7 +234,7 @@
                                     Library
                                 </h3>
                                 <h4 class="project__description--sub-title">
-                                    Html, CSS, JavaScript
+                                    Html, CSS, JavaScript, React 
                                 </h4>
                                 <p class="project__description--para">
                                     Library designed page orchestrated to demonstrate and display my ability to index
@@ -231,7 +242,7 @@
                                     price different options as well are space and organize charted items.
                                 </p>
                                 <div class="project__description--links">
-                                    <a href="https://dte-84.github.io/Library/" target="_blank"
+                                    <a href="https://ecommercelibray-react-a3c104c7bd57.herokuapp.com/#features" target="_blank"
                                         class="project__description--link">
                                         <i class="fas fa-link"></i>
                                     </a>
