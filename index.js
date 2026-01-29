@@ -1,3 +1,6 @@
+if (localStorage.getItem("theme") !== "light") {
+    document.body.classList.add("dark-theme");
+}
 let isModalOpen = false;
 let contrastToggle = false;
 const scaleFactor = 1 / 20;
@@ -15,13 +18,14 @@ function moveBackground(event) {
 }
 
 function toggleContrast() {
-  contrastToggle = !contrastToggle;
-  if (contrastToggle) {
-    document.body.classList += " dark-theme"
-  }
-  else {
-    document.body.classList.remove("dark-theme")
-  }
+    document.body.classList.toggle("dark-theme");
+    
+    // If we just REMOVED dark-theme, the user wants light mode
+    if (document.body.classList.contains("dark-theme")) {
+        localStorage.setItem("theme", "dark");
+    } else {
+        localStorage.setItem("theme", "light");
+    }
 }
 
 function contact(event) {

@@ -106,6 +106,10 @@ textarea:focus {
   color: rgb(25, 94, 221) !important;
 }
 
+.Blue {
+  
+  color: rgb(25, 94, 221) !important;
+}
 
 
 .orange {
@@ -198,8 +202,8 @@ nav,
 }
 
 .dark-theme .mail__btn {
-  background-color: #d1fe00;
-  color: #242424;
+  background-color: rgb(240, 98, 33);
+  color: #d1fe00;
   
 }
 
@@ -234,7 +238,7 @@ nav,
 }
 
 .social__link {
-  background-color: rgb(141, 41, 199);
+  background-color: #3b82f6;
   color: white;
   padding: 6px;
   width: 32px;
@@ -247,6 +251,10 @@ nav,
   border-radius: 50%;
 }
 
+.dark-theme .social__link {
+  background-color: rgb(240, 98, 33);
+}
+
 .mail__btn {
   width: 70px;
   height: 70px;
@@ -254,7 +262,7 @@ nav,
   border-radius: 50%;
   border: none;
   background-color: #242424;
-  color: #d1fe00;
+  color: #3b82f6;
   position: fixed;
   bottom: 32px;
   right: 40px;
@@ -402,35 +410,32 @@ nav {
 }
 
 .nav__link--anchor {
-  
-        text-shadow: 0 19px 0 black;
-        
-        color: black;
-        font-size: 19px;
-        text-transform: uppercase;
-        font-weight: 700;
-        text-decoration: none;
-        overflow: hidden;
+  text-shadow: 0 19px 0 black;
+  color: black;
+  font-size: 19px;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-decoration: none;
+  overflow: hidden;
+}
 
-        span {
-          position: relative;
-          display: inline-block;
-        }
-        &:hover {
-          span {
-            animation: up 0.3s forwards;
-            animation-delay: calc(sibling-index() * 0.1s);
-            
-          }
-        }
-        &:not(:hover) {
-          span {
-            animation: down 0.3s  reverse;
-            animation-delay: calc(sibling-index() * 0.1s);  
-            
-          }
-        }
-      }
+/* Target ONLY the letter spans */
+.nav__link--anchor .letter {
+  position: relative;
+  display: inline-block;
+}
+
+/* Animations only apply to .letter */
+.nav__link--anchor:hover .letter {
+  animation: up 0.3s forwards;
+  animation-delay: calc(sibling-index() * 0.1s);
+}
+
+.nav__link--anchor:not(:hover) .letter {
+  animation: down 0.3s reverse;
+  animation-delay: calc(sibling-index() * 0.1s);
+}
+     
 
       @keyframes down {
         100% { 
@@ -652,6 +657,8 @@ nav {
   PROJECTS 
   
 */
+
+
 
 .section__title {
   text-align: center;
@@ -923,17 +930,20 @@ footer {
 }
 
 /* CAROUSEL STYLES */
+
 .carousel-container {
   position: relative;
   max-width: 1100px;
   /* Match the .row max-width */
   margin: 0 auto;
   overflow: hidden;
+  visibility: visible ! important;
 }
 
 .carousel-slide {
   display: none;
   animation: slide-in 1s ease-in-out;
+  
 }
 
 @keyframes slide-in {

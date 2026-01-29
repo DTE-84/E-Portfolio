@@ -28,7 +28,14 @@
 </head>
 
 <body>
-
+<script>
+    // This runs BEFORE the rest of the page loads
+    const theme = localStorage.getItem("theme");
+    // If the user hasn't specifically chosen 'light', default to dark
+    if (theme !== "light") {
+      document.body.classList.add("dark-theme");
+    }
+  </script>
 
 
     <section id="landing-page" onmousemove="moveBackground(event)">
@@ -44,21 +51,23 @@
             nav__link--anchor
             link__hover-effect
             link__hover-effect--black
-          "><span>A</span><span>B</span><span>O</span><span>U</span><span>T</span></a>
+          "><span class="letter">A</span><span class="letter">B</span><span class="letter">O</span><span class="letter">U</span><span class="letter">T</span>
+                   </a>
                 </li>
                 <li class="nav__link">
                     <a href="#projects" class="
             nav__link--anchor
             link__hover-effect
             link__hover-effect--black
-          "><span>P</span><span>r</span><span>o</span><span>j</span><span>e</span><span>c</span><span>t</span><span>s</span></a>
+          ">
+          <span class="letter">P</span><span class="letter">r</span><span class="letter">o</span><span class="letter">j</span><span class="letter">e</span><span class="letter">c</span><span class="letter">t</span><span>s</span></a>
                 </li>
                 <li class="nav__link" onclick="toggleModal()">
                     <a href="#" class="
             nav__link--anchor
             link__hover-effect
             link__hover-effect--black
-          "><span>C</span><span>o</span><span>n</span><span>t</span><span>a</span><span>c</span><span>t</span></a>
+          "><span class="letter">C</span><span class="letter">o</span><span class="letter">n</span><span class="letter">t</span><span class="letter">a</span><span class="letter">c</span><span class="letter">t</span></a>
                 </li>
                 <li class="nav__link click" onclick="toggleContrast()">
                     <a href="#" class="
@@ -110,12 +119,12 @@
             <h3 class="modal__title modal__title--about">Here's a bit about me.</h3>
             <h4 class="modal__sub-title modal__sub-title--about">Frontend Software Engineer.</h4>
             <p class="modal__para">
-                I'm a 41 year old<span class="blue"> Frontend Software Engineer</span>. I love the challenge of
+                I'm a 41 year old<span class="Blue"> Frontend Software Engineer</span>. I love the challenge of
                 working on and solving extremely difficult engineering problems.
                 <br>
-                I'm currently learning to become a<span class="blue"> Full Stack Software Engineer</span> with a
+                I'm currently learning to become a<span class="Blue"> Full Stack Software Engineer</span> with a
                 focus on the frontend. I was taught by a team consisting of some of the most <span
-                    class="blue">talented</span> and<span class="blue"> experienced</span> software
+                    class="Blue">talented</span> and<span class="Blue"> experienced</span> software
                 engineers,</span> including David Bragg at Frontend Simplified Mentorship Program.
             </p>
             <div class="modal__languages">
