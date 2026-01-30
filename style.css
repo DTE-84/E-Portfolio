@@ -969,10 +969,14 @@ footer {
   width: 18px;
   margin: 0 5px;
   background-color: transparent;
-  border: 2px solid rgb(240, 98, 33);
+  border: 2px solid #3b82f6;
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
+}
+.active,
+.dot:hover {
+  background-color: #3b82f6;
 }
 
 .dark-theme .dot {
@@ -985,10 +989,7 @@ footer {
   background-color: #d1fe00;
 }
 
-.active,
-.dot:hover {
-  background-color: rgb(240, 98, 33);
-}
+
 
 .dark-theme footer {
   background-color: rgb(247, 245, 242);
