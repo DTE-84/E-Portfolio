@@ -494,9 +494,11 @@ nav {
 }
 
 .modal--open .modal {
-  z-index: 60;
+  z-index: 999;
+  display: flex;
   box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.55);
   visibility: visible;
+  opacity: 1;
 }
 
 .modal__half {
@@ -685,7 +687,7 @@ nav {
 
 .project__wrapper:hover .project__description {
   opacity: 1;
-  transform: translateY(-50%);
+  transform: translate(0, -50%); 
 }
 
 .project__wrapper:hover .project__img {
@@ -697,11 +699,13 @@ nav {
   position: absolute;
   top: 50%;
   left: 90px;
-  transform: translateY(100%);
-  opacity: 0;
-  transition: opacity 300ms, transform 450ms ease;
   color: white;
   max-width: 550px;
+  
+  transform: translate(-100px, -50%); 
+  opacity: 0;
+  transition: transform 450ms ease, opacity 300ms ease;
+  pointer-events: none; 
 }
 
 .project__wrapper:hover .project__wrapper--bg {
@@ -735,9 +739,7 @@ nav {
   margin-right: 16px;
 }
 
-.project__description--para {
-  margin: 16px 0;
-}
+
 
 /* 
 
@@ -910,16 +912,25 @@ footer {
     display: none;
   }
 
-  .project__description--para {
-    display: none;
-  }
+ .project__description--para {
+    display: block;
+    opacity: 0; 
+    transform: translateY(20px); /* Small shift for a "pop" effect */
+    transition: all 300ms ease;
+     margin: 16px 0;
+}
+}
 
   .project__description {
-    left: 0;
-    padding: 0;
-    width: 100%;
-    text-align: center;
-  }
+  position: absolute;
+  top: 50%;
+  left: 90px;
+   
+  transform: translate(-100px, -50%); 
+  opacity: 0;
+  transition: transform 450ms ease, opacity 300ms ease;
+  pointer-events: none; 
+}
 
   .project__description--sub-title {
     margin-bottom: 8px;
@@ -935,10 +946,16 @@ footer {
 .carousel-container {
   position: relative;
   max-width: 1100px;
-  /* Match the .row max-width */
+  
   margin: 0 auto;
   overflow: hidden;
   visibility: visible ! important;
+}
+
+.carousel-slide.active .project__wrapper:hover .project__description {
+  color: #d1fe00; 
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  transform: scale(1.05) translateY(-50%);
 }
 
 .carousel-slide {
@@ -957,6 +974,42 @@ footer {
     transform: translateX(0);
     opacity: 1;
   }
+}
+
+
+.carousel-slide.active .project__description {
+  animation: text-slide-in 0.8s ease-out forwards;
+}
+
+
+.carousel-slide.active {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+@keyframes text-slide-in {
+  0% {
+    transform: translate(-100px, -50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, -50%);
+    opacity: 1;
+  }
+}
+
+.carousel-slide.active .project__description {
+  display: block !important;
+  animation: text-slide-in 0.8s ease-out forwards !important;
+  visibility: visible !important;
+}
+
+/* 3. The Reset */
+/* This ensures that when a slide ISN'T active, the text is hidden/reset */
+.carousel-slide:not(.active) .project__description {
+  opacity: 0;
+  transform: translate(-100px, -50%);
 }
 
 .dot-container {
@@ -1041,6 +1094,7 @@ footer {
 }
 
 .menu--open .menu__backdrop {
+  visibility: visible ! important;
     transform: translateY(0);
     opacity: 1;
 }
