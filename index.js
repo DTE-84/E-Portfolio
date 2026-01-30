@@ -1,3 +1,16 @@
+function moveBackground(event) {
+  const shapes = document.querySelectorAll(".shape");
+  const x = event.clientX / 20;
+  const y = event.clientY / 20;
+
+  for (let i = 0; i < shapes.length; ++i) {
+    const isOdd = i % 2 !== 0;
+    const boolInt = isOdd ? -1 : 1;
+    // Add rotation to every shape
+    shapes[i].style.transform = `translate(${x * boolInt}px, ${y * boolInt}px) rotate(${x * boolInt * 10}deg)`
+  }
+}
+
 // 1. Foundation Variables
 let isModalOpen = false;
 let slideIndex = 1;
