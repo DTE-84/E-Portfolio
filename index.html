@@ -30,13 +30,8 @@
 <body>
 <script>
     // This runs BEFORE the rest of the page loads
-    const theme = localStorage.getItem("theme");
-    // If the user hasn't specifically chosen 'light', default to dark
-    if (theme !== "light") {
-      document.body.classList.add("dark-theme");
-    }
-  </script>
-
+    document.body.classList.add("dark-theme");
+</script>
 
     <section id="landing-page" onmousemove="moveBackground(event)">
         <nav>

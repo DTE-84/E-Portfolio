@@ -726,7 +726,6 @@ nav {
   opacity: 0;
   visibility: hidden;
   transition: all 400ms ease;
-  pointer-events: none; 
   color: transparent;
 }
 
@@ -759,6 +758,8 @@ nav {
 .project__description--link {
   font-size: 20px;
   margin-right: 16px;
+  pointer-events: auto;
+  color: #3b82f6;
 }
 
 
@@ -969,11 +970,23 @@ footer {
 .project__wrapper:hover .project__description {
   opacity: 1;
   visibility: visible;
-  color: white;
+  color: #d1fe00;
 }
 
 .carousel-slide {
   display: none;
+  animation: slide-in 1s ease-in-out;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .carousel-slide.active {
@@ -1008,8 +1021,11 @@ footer {
   border-color: #d1fe00;
 }
 
-.dark-theme .active,
-.dot:hover {
+.dark-theme .active {
+  background-color: #d1fe00;
+}
+
+.dark-theme .dot:hover {
   background-color: #d1fe00;
 }
 
