@@ -9,6 +9,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 100px;
 }
 
 li {
@@ -1007,4 +1008,95 @@ footer {
 
 .dark-theme .footer__social--list .link__hover-effect--white:after {
   background-color: #242424;
+}
+
+/* --- HAMBURGER MENU --- */
+
+.btn__menu {
+    background-color: transparent;
+    border: none;
+    color: #3b82f6; /* Match your blue */
+    font-size: 32px;
+    display: none; /* Hidden on desktop */
+}
+
+.dark-theme .btn__menu {
+    color: #d1fe00; /* Match your neon green */
+}
+
+.menu__backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #242424;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 600ms cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(-100%); /* Changed from X to Y to drop from top */
+    opacity: 0;
+}
+
+.menu--open .menu__backdrop {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.btn__menu--close {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    color: white;
+}
+
+.menu__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu__list {
+    margin: 20px 0;
+}
+
+.menu__link {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+/* Show hamburger only on small screens */
+@media (max-width: 768px) {
+    .nav__link--list {
+        display: none; /* Hide standard nav */
+    }
+    .btn__menu {
+        display: block; /* Show hamburger */
+    }
+}
+
+/* When menu opens, links move to original position */
+.menu--open .menu__list {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* STAGGERED ANIMATION DELAYS */
+.menu--open .menu__list:nth-child(1) { transition-delay: 200ms; }
+.menu--open .menu__list:nth-child(2) { transition-delay: 300ms; }
+.menu--open .menu__list:nth-child(3) { transition-delay: 400ms; }
+
+.menu__link {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 300ms ease;
+}
+
+.menu__link:hover {
+    color: #d1fe00; /* Neon highlight on hover */
 }
