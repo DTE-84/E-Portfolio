@@ -22,6 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
     dots.forEach((dot, index) => {
         dot.onclick = () => currentSlide(index + 1);
     });
+
+    const projectWrappers = document.querySelectorAll(".project__wrapper");
+    projectWrappers.forEach(wrapper => {
+        wrapper.addEventListener("mouseenter", pauseCarousel);
+        wrapper.addEventListener("mouseleave", resumeCarousel);
+    });
 });
 
 // 2. The Modal - Now with a "Safety Logger"
@@ -78,6 +84,14 @@ function showSlides(n) {
     }
 
     clearTimeout(slideTimeout);
+    slideTimeout = setTimeout(() => plusSlides(1), 5000);
+}
+
+function pauseCarousel() {
+    clearTimeout(slideTimeout);
+}
+
+function resumeCarousel() {
     slideTimeout = setTimeout(() => plusSlides(1), 5000);
 }
 
