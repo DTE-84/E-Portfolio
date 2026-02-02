@@ -168,7 +168,7 @@ nav,
 .dark-theme .section__sub-title,
 .dark-theme .nav__link--anchor {
   color: #d1fe00;
-  text-shadow: 0 19px 0  rgb(240, 98, 33);
+  text-shadow: 0 19px 0 rgb(240, 98, 33);
 }
 
 .dark-theme .section__title,
@@ -191,7 +191,7 @@ nav,
 
 .dark-theme #personal-logo {
   filter: invert(1);
-  
+
 }
 
 .dark-theme .scroll__icon {
@@ -235,10 +235,18 @@ nav,
 }
 
 @keyframes float {
-  0% {transform: translateY(0px);}
-  50% {transform: translateY(-15px);}
-  100% {transform: translateY(0px);} 
- }
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
 
 .social__list {
   margin-top: 16px;
@@ -413,7 +421,6 @@ nav {
   height: 100px;
   filter: none;
   margin-top: 20px
-  
 }
 
 .nav__link--list {
@@ -431,7 +438,7 @@ nav {
 
 .nav__link--anchor {
   text-shadow: 0 19px 0 #3b82f6;
-  color:  black;
+  color: black;
   font-size: 19px;
   text-transform: uppercase;
   font-weight: 700;
@@ -695,7 +702,7 @@ nav {
 }
 
 .project__img {
- width: 100%;
+  width: 100%;
   display: block;
   transition: transform 600ms ease;
 }
@@ -737,20 +744,21 @@ nav {
 
 .project__description {
   position: absolute;
-  top: 0; 
-  left: 0; 
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100%; 
-  display: flex; 
-  flex-direction: column; 
-  justify-content: center; 
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   z-index: 2;
   opacity: 0;
   visibility: hidden;
   transition: all 400ms ease;
-  text-align: center; 
+  text-align: center;
 }
+
 .project__wrapper:hover .project__wrapper--bg {
   opacity: 0.7;
   visibility: visible;
@@ -792,33 +800,33 @@ nav {
 
 
 .project__mobile-links {
-    display: none;
-    margin-top: 20px;
+  display: none;
+  margin-top: 20px;
 }
 
 .project__mobile-links .btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #3b82f6;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #3b82f6;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
 .project__mobile-links .btn:hover {
-    background-color: #2a6ae2;
+  background-color: #2a6ae2;
 }
 
 
 @media (max-width: 768px) {
-    .project__mobile-links {
-        display: none; 
-    }
+  .project__mobile-links {
+    display: none;
+  }
 
 }
 
@@ -829,7 +837,7 @@ nav {
 */
 footer {
   position: relative;
-  background-color:black;
+  background-color: black;
   display: flex;
   padding: 6% 0;
 
@@ -858,6 +866,7 @@ footer {
 .footer__social--link {
   color: #d1fe00;
 }
+
 .footer__copyright {
   color: white;
 }
@@ -1013,7 +1022,7 @@ footer {
     display: block;
     opacity: 0;
     transform: translateY(20px);
-    
+
     transition: all 300ms ease;
     margin: 16px 0;
   }
@@ -1062,6 +1071,7 @@ footer {
     transform: translateX(100%);
     opacity: 0;
   }
+
   to {
     transform: translateX(0);
     opacity: 1;
@@ -1117,7 +1127,7 @@ footer {
 
 .footer__social--link {
   text-shadow: 0 19px 0 rgb(240, 98, 33);
-  color:  #d1fe00;
+  color: #d1fe00;
   font-size: 19px;
   text-transform: uppercase;
   font-weight: 700;
@@ -1177,7 +1187,7 @@ footer {
 }
 
 .dark-theme .footer__logo--img {
- filter: none;
+  filter: none;
 }
 
 
@@ -1191,15 +1201,15 @@ footer {
   background-color: transparent;
   border: none;
   color: #3b82f6;
-  
+
   font-size: 32px;
   display: none;
-  
+
 }
 
 .dark-theme .btn__menu {
   color: #d1fe00;
-  
+
 }
 
 .menu__backdrop {
@@ -1215,7 +1225,7 @@ footer {
   align-items: center;
   transition: all 600ms cubic-bezier(0.16, 1, 0.3, 1);
   transform: translateY(-100%);
-  
+
   opacity: 0;
 }
 
@@ -1252,12 +1262,12 @@ footer {
 @media (max-width: 768px) {
   .nav__link--list {
     display: none;
-    
+
   }
 
   .btn__menu {
     display: block;
-    
+
   }
 }
 
@@ -1289,7 +1299,7 @@ footer {
 
 .menu__link:hover {
   color: #d1fe00;
-  
+
 }
 
 .menu__link .letter {
