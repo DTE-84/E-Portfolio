@@ -1181,7 +1181,9 @@ footer {
 }
 
 
-
+.dark-theme .footer__social--list .link__hover-effect--white:after {
+  background-color: black;
+}
 
 /* --- HAMBURGER MENU --- */
 

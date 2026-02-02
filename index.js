@@ -29,9 +29,12 @@ document.addEventListener("DOMContentLoaded", () => {
         wrapper.addEventListener("mouseleave", resumeCarousel);
     });
     
-    const letters = document.querySelectorAll(".letter");
-    letters.forEach((letter, index) => {
-        letter.style.setProperty('--sibling-index', index);
+    const animatedLinks = document.querySelectorAll(".link__hover-effect");
+    animatedLinks.forEach(link => {
+        const letters = link.querySelectorAll(".letter");
+        letters.forEach((letter, index) => {
+            letter.style.setProperty('--sibling-index', index);
+        });
     });
 });
 
