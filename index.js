@@ -122,3 +122,33 @@ function toggleMenu() {
 window.onload = () => {
     showSlides(slideIndex);
 };
+
+function contact(event) {
+   event.preventDefault();
+   const loading = document.querySelector(".modal__overlay--loading");
+   const success = document.querySelector(".modal__overlay--success");
+   loading.classList.add("modal__overlay--visible");
+   emailjs
+     .sendForm(
+       "service_akgmg6r",
+       "template_nx4fvkb",
+          event.target,
+          "zmPiRmxRkScwdiYFX"
+        )
+        .then(() => {
+          loading.classList.remove("modal__overlay--visible");
+          success.classList.add("modal__overlay--visible");
+       setTimeout(() => {
+            success.classList.remove("modal__overlay--visible");
+            toggleModal();
+            }, 2000);
+            const form = document.getElementById("contact__form");
+            form.reset();
+        })
+        .catch(() => {
+          loading.classList.remove("modal__overlay--visible");
+          alert(
+            "The email service is temporarily unavailable. Please contact me directly at drew.t.ernst@gmail.com"
+          );
+        });
+    }
