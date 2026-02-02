@@ -6,7 +6,7 @@ function moveBackground(event) {
   for (let i = 0; i < shapes.length; ++i) {
     const isOdd = i % 2 !== 0;
     const boolInt = isOdd ? -1 : 1;
-    // Add rotation to every shape
+    
     shapes[i].style.transform = `translate(${x * boolInt}px, ${y * boolInt}px) rotate(${x * boolInt * 10}deg)`
   }
 }
@@ -28,11 +28,15 @@ document.addEventListener("DOMContentLoaded", () => {
         wrapper.addEventListener("mouseenter", pauseCarousel);
         wrapper.addEventListener("mouseleave", resumeCarousel);
     });
+    
+    const letters = document.querySelectorAll(".letter");
+    letters.forEach((letter, index) => {
+        letter.style.setProperty('--sibling-index', index);
+    });
 });
 
-// 2. The Modal - Now with a "Safety Logger"
+
 function toggleModal() {
-    console.log("Toggle Modal Clicked!"); // This will show in F12 Console
     isModalOpen = !isModalOpen;
     if (isModalOpen) {
         document.body.classList.add("modal--open");
@@ -51,7 +55,6 @@ function currentSlide(n) {
 }
 
 function currentSlide(n) {
-    console.log("Dot clicked, going to slide:", n);
     clearTimeout(slideTimeout);
     showSlides(slideIndex = n);
 }
@@ -97,7 +100,6 @@ function resumeCarousel() {
 
 // CONTRAST TOGGLE
 function toggleContrast() {
-    console.log("Contrast toggled!"); // Check F12 console for this
     document.body.classList.toggle("dark-theme");
     
     // Save preference
@@ -107,10 +109,9 @@ function toggleContrast() {
 
 // HAMBURGER MENU TOGGLE
 function toggleMenu() {
-    console.log("Menu toggled!"); // Check F12 console for this
     document.body.classList.toggle("menu--open");
     
-    // Prevent background scrolling when menu is open
+    
     if (document.body.classList.contains("menu--open")) {
         document.body.style.overflow = "hidden";
     } else {

@@ -30,7 +30,7 @@ button {
 }
 
 section {
-  background-color: rgb(247, 245, 242);
+  background-color: white;
   transition: all 300ms ease;
 }
 
@@ -186,11 +186,12 @@ nav,
 }
 
 .dark-theme section {
-  background-color: #242424;
+  background-color: black;
 }
 
 .dark-theme #personal-logo {
-  filter: none;
+  
+  filter: invert(1);
 }
 
 .dark-theme .scroll__icon {
@@ -393,7 +394,7 @@ nav {
 #personal-logo {
   width: 100px;
   height: 100px;
-  filter: invert(1);
+  
   margin-top: 20px
 }
 
@@ -420,21 +421,21 @@ nav {
   overflow: hidden;
 }
 
-/* Target ONLY the letter spans */
+
 .nav__link--anchor .letter {
   position: relative;
   display: inline-block;
 }
 
-/* Animations only apply to .letter */
+
 .nav__link--anchor:hover .letter {
   animation: up 0.3s forwards;
-  animation-delay: calc(sibling-index() * 0.1s);
+  animation-delay: calc(var(--sibling-index) * 0.05s);
 }
 
 .nav__link--anchor:not(:hover) .letter {
   animation: down 0.3s reverse;
-  animation-delay: calc(sibling-index() * 0.1s);
+  animation-delay: calc(var(--sibling-index) * 0.05s);
 }
 
 
@@ -621,7 +622,8 @@ nav {
 }
 
 .modal__overlay--success {
-  background-color: #4bb543;
+  background-color: #d1fe00;
+  color: #242424;
   font-size: 40px;
   font-weight: 700;
   text-align: center;
@@ -797,7 +799,7 @@ nav {
 
 @media (max-width: 768px) {
     .project__mobile-links {
-        display: none; /* Revert to hidden */
+        display: none; 
     }
 
 }
@@ -912,7 +914,7 @@ footer {
   left: 80vw;
 }
 
-/* ADDED AFTER TUTORIAL */
+
 .footer__logo--popper {
   position: absolute;
   right: 0;
@@ -1196,4 +1198,19 @@ footer {
 .menu__link:hover {
   color: #d1fe00;
   
+}
+
+.menu__link .letter {
+  position: relative;
+  display: inline-block;
+}
+
+.menu__link:hover .letter {
+  animation: up 0.3s forwards;
+  animation-delay: calc(var(--sibling-index) * 0.05s);
+}
+
+.menu__link:not(:hover) .letter {
+  animation: down 0.3s reverse;
+  animation-delay: calc(var(--sibling-index) * 0.05s);
 }
