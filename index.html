@@ -4,21 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link />
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@800&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@800&display=swap" rel="stylesheet" />
     <title>DTE Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/66240d21b2.js" crossorigin="anonymous"></script>
-    
+
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
     </script>
     <script type="text/javascript">
@@ -29,10 +22,11 @@
 </head>
 
 <body>
-<script>
-    
-    document.body.classList.add("dark-theme");
-</script>
+
+    <script>
+
+        document.body.classList.add("dark-theme");
+    </script>
 
     <section id="landing-page" onmousemove="moveBackground(event)">
         <nav>
@@ -41,18 +35,19 @@
             </figure>
 
             <button class="btn__menu" onclick="toggleMenu()">
-        <i class="fas fa-bars"></i>
-    </button>
+                <i class="fas fa-bars"></i>
+            </button>
 
             <ul class="nav__link--list">
-                
+
                 <li class="nav__link" onclick="toggleModal()">
                     <a href="#" class="
             nav__link--anchor
             link__hover-effect
             link__hover-effect--black
-          "><span class="letter">A</span><span class="letter">B</span><span class="letter">O</span><span class="letter">U</span><span class="letter">T</span>
-                   </a>
+          "><span class="letter">A</span><span class="letter">B</span><span class="letter">O</span><span
+                            class="letter">U</span><span class="letter">T</span>
+                    </a>
                 </li>
                 <li class="nav__link">
                     <a href="#projects" class="
@@ -60,33 +55,39 @@
             link__hover-effect
             link__hover-effect--black
           ">
-          <span class="letter">P</span><span class="letter">r</span><span class="letter">o</span><span class="letter">j</span><span class="letter">e</span><span class="letter">c</span><span class="letter">t</span><span class="letter">s</span></a>
+                        <span class="letter">P</span><span class="letter">r</span><span class="letter">o</span><span
+                            class="letter">j</span><span class="letter">e</span><span class="letter">c</span><span
+                            class="letter">t</span><span class="letter">s</span></a>
                 </li>
                 <li class="nav__link" onclick="toggleModal()">
                     <a href="#" class="
             nav__link--anchor
             link__hover-effect
             link__hover-effect--black
-          "><span class="letter">C</span><span class="letter">o</span><span class="letter">n</span><span class="letter">t</span><span class="letter">a</span><span class="letter">c</span><span class="letter">t</span></a>
+          "><span class="letter">C</span><span class="letter">o</span><span class="letter">n</span><span
+                            class="letter">t</span><span class="letter">a</span><span class="letter">c</span><span
+                            class="letter">t</span></a>
                 </li>
-                <li class="nav__link click" onclick="toggleContrast()">
-                    <a href="#" class="
-            nav__link--anchor-color
-            link__hover-effect
-            link__hover-effect--black
-          "><i class="fas fa-adjust"></i></a>
-                </li>
+
             </ul>
             <div class="menu__backdrop">
-        <button class="btn__menu btn__menu--close" onclick="toggleMenu()">
-            <i class="fas fa-times"></i>
-        </button>
-        <ul class="menu__links">
-            <li class="menu__list"><a href="#" class="menu__link" onclick="toggleMenu(); toggleModal()"><span class="letter">A</span><span class="letter">b</span><span class="letter">o</span><span class="letter">u</span><span class="letter">t</span></a></li>
-            <li class="menu__list"><a href="#projects" class="menu__link" onclick="toggleMenu()"><span class="letter">P</span><span class="letter">r</span><span class="letter">o</span><span class="letter">j</span><span class="letter">e</span><span class="letter">c</span><span class="letter">t</span><span class="letter">s</span></a></li>
-            <li class="menu__list"><a href="#" class="menu__link" onclick="toggleMenu(); toggleModal()"><span class="letter">C</span><span class="letter">o</span><span class="letter">n</span><span class="letter">t</span><span class="letter">a</span><span class="letter">c</span><span class="letter">t</span></a></li>
-        </ul>
-    </div>
+                <button class="btn__menu btn__menu--close" onclick="toggleMenu()">
+                    <i class="fas fa-times"></i>
+                </button>
+                <ul class="menu__links">
+                    <li class="menu__list"><a href="#" class="menu__link" onclick="toggleMenu(); toggleModal()"><span
+                                class="letter">A</span><span class="letter">b</span><span class="letter">o</span><span
+                                class="letter">u</span><span class="letter">t</span></a></li>
+                    <li class="menu__list"><a href="#projects" class="menu__link" onclick="toggleMenu()"><span
+                                class="letter">P</span><span class="letter">r</span><span class="letter">o</span><span
+                                class="letter">j</span><span class="letter">e</span><span class="letter">c</span><span
+                                class="letter">t</span><span class="letter">s</span></a></li>
+                    <li class="menu__list"><a href="#" class="menu__link" onclick="toggleMenu(); toggleModal()"><span
+                                class="letter">C</span><span class="letter">o</span><span class="letter">n</span><span
+                                class="letter">t</span><span class="letter">a</span><span class="letter">c</span><span
+                                class="letter">t</span></a></li>
+                </ul>
+            </div>
         </nav>
 
 
@@ -116,6 +117,9 @@
             </div>
     </section>
     </header>
+    <button class="contrast__btn" onclick="toggleContrast()">
+        <i class="fas fa-adjust"></i>
+    </button>
     <a href="#">
         <button class="mail__btn click" onclick="toggleModal()">
             <i class="fas fa-envelope"></i>
@@ -230,14 +234,15 @@
                                     Html, CSS, JavaScript
                                 </h4>
                                 <p class="project__description--para">
-                                    A  business page to demonstrate skill utilizing multiple coding
-                                    languages. I was the sole front-end developer of this application.
+                                    A landing page that demonstrate skills utilizing multiple coding
+                                    languages. This was my first project.
                                 </p>
                                 <div class="project__description--links">
                                     <a href="https://dte-84.github.io/treact-2/" target="_blank"
                                         class="project__description--link">
                                         <i class="fas fa-link"></i>
                                     </a>
+
                                 </div>
 
                             </div>
@@ -252,14 +257,14 @@
                                     Library
                                 </h3>
                                 <h4 class="project__description--sub-title">
-                                    Html, CSS, JavaScript, React 
+                                    Html, CSS, JavaScript, React
                                 </h4>
                                 <p class="project__description--para">
                                     Full Functioning E-Commerce Book Store.
                                 </p>
                                 <div class="project__description--links">
-                                    <a href="https://ecommercelibray-react-a3c104c7bd57.herokuapp.com/#features" target="_blank"
-                                        class="project__description--link">
+                                    <a href="https://ecommercelibray-react-a3c104c7bd57.herokuapp.com/#features"
+                                        target="_blank" class="project__description--link">
                                         <i class="fas fa-link"></i>
                                     </a>
                                 </div>
@@ -301,7 +306,8 @@
                                     Html, CSS, JavaScript
                                 </h4>
                                 <p class="project__description--para">
-                                    A landscape company from St. Louis asked me to create a page -- this demonstrate my skill utilizing multiple coding
+                                    A landscape company from St. Louis asked me to create a page -- this demonstrate my
+                                    skill utilizing multiple coding
                                     languages.</p>
                                 <div class="project__description--links">
                                     <a href="https://dte-84.github.io/TonysLandscaping/" target="_blank"
@@ -339,33 +345,39 @@
           footer__social--link
           link__hover-effect
           link__hover-effect--white
-        "><span class="letter">G</span><span class="letter">i</span><span class="letter">t</span><span class="letter">H</span><span class="letter">u</span><span class="letter">b</span></a>
+        "><span class="letter">G</span><span class="letter">i</span><span class="letter">t</span><span
+                            class="letter">H</span><span class="letter">u</span><span class="letter">b</span></a>
                     <a href="https://www.linkedin.com/in/dte84/" target="_blank" class="
           footer__social--link
           link__hover-effect
           link__hover-effect--white
-        "><span class="letter">L</span><span class="letter">i</span><span class="letter">n</span><span class="letter">k</span><span class="letter">e</span><span class="letter">d</span><span class="letter">I</span><span class="letter">n</span>
-                       
+        "><span class="letter">L</span><span class="letter">i</span><span class="letter">n</span><span
+                            class="letter">k</span><span class="letter">e</span><span class="letter">d</span><span
+                            class="letter">I</span><span class="letter">n</span>
+
                     </a>
                     <a href="#" onclick="toggleModal()" class="
           footer__social--link
           link__hover-effect
           link__hover-effect--white
-        "><span class="letter">C</span><span class="letter">o</span><span class="letter">n</span><span class="letter">t</span><span class="letter">a</span><span class="letter">c</span><span class="letter">t</span>
+        "><span class="letter">C</span><span class="letter">o</span><span class="letter">n</span><span
+                            class="letter">t</span><span class="letter">a</span><span class="letter">c</span><span
+                            class="letter">t</span>
                     </a>
                     <a href="./assets/DTEFEDResume.pdf" target="_blank" class="
           footer__social--link
           link__hover-effect
           link__hover-effect--white
-        "><span class="letter">R</span><span class="letter">e</span class="letter"><span class="letter">s</span><span class="letter">u</span><span class="letter">m</span><span class="letter">e</span>
-                </a>
+        "><span class="letter">R</span><span class="letter">e</span class="letter"><span class="letter">s</span><span
+                            class="letter">u</span><span class="letter">m</span><span class="letter">e</span>
+                    </a>
                 </div>
                 <div class="footer__copyright">Copyright &copy; 2025 Drew Ernst</div>
             </div>
         </div>
     </footer>
     <script src="index.js"></script>
-    
+
 </body>
 
 </html>

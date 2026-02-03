@@ -156,3 +156,35 @@ function contact(event) {
           );
         });
     }
+
+// Initial Modal Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const initialModalOverlay = document.getElementById('initialModalOverlay');
+    const initialModalContent = document.querySelector('.initial-modal-content');
+    const myJourneyButton = document.getElementById('myJourneyButton');
+    const shapes = document.querySelectorAll('.shape'); 
+
+    if (initialModalOverlay && initialModalContent) {
+        initialModalOverlay.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; 
+
+       
+        shapes.forEach(shape => shape.classList.add('visible'));
+
+        
+        setTimeout(() => {
+            initialModalContent.classList.add('show-content');
+        }, 100); 
+    }
+
+    if (myJourneyButton) {
+        myJourneyButton.addEventListener('click', () => {
+            if (initialModalOverlay) {
+                initialModalOverlay.classList.add('hidden'); 
+            }
+            document.body.style.overflow = 'auto'; 
+            
+            shapes.forEach(shape => shape.classList.remove('visible'));
+        });
+    }
+});
