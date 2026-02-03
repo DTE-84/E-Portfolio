@@ -1,10 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400);
+
+@import "compass/css3";
+
+@import 'http://battlelog.battlefield.com/cdnprefix/local/public/base/fonts/purista/purista.css';
+
+
+.space-grotesk-space {
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.shadows-into-light-regular {
+  font-family: "Shadows Into Light", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.smooch-sans-uniquifier {
+  font-family: "Smooch Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Smooch Sans", sans-serif;
 }
 
 html {
@@ -18,7 +46,8 @@ li {
 
 p {
   line-height: 1.5;
-  font-size: 16px;
+  font-size: 18px;
+  
 }
 
 a {
@@ -69,7 +98,37 @@ textarea:focus {
   border-color: rgb(25, 94, 221);
 }
 
+#preloader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out; /* Added transition */
+}
 
+.wrap {
+  display: block !important;
+   background-color: red;
+    min-width: 200px;
+     min-height: 100px; 
+     border: 2px solid
+  white;
+}
+
+.bg {
+  display: block !important;
+  background-color: red;
+}
+
+ #preloader.preloader--hidden {
+          display: none !important; /* Forceful removal to ensure it doesn't block content */
+        }
 
 .container {
   padding: 50px 0;
@@ -96,16 +155,45 @@ textarea:focus {
   transform: scale(0.8);
 }
 
+/* Global .title for page headers */
 .title {
+  font-family: "Space Grotesk", sans-serif;
   font-size: 120px;
   margin-bottom: 12px;
   text-align: left;
   line-height: 1;
+  color: black;
 }
 
-.blue {
-  color: rgb(25, 94, 221) !important;
+/* Preloader specific animations */
+.loading .title {
+  display: block !important;
+  background-color: #3b82f6;
+  font-size: 24px; /* Adjust as needed for loading message */
+  right: 30px; /* Start position for animation */
+  opacity: 0; /* Initial state, as per @keyframes title */
+  position: absolute; /* Essential for 'right' property to work */
 }
+
+.loading .text {
+  display: block !important;
+  background-color: purple;
+  opacity: 0; /* Initial state, as per @keyframes title */
+  right: 30px; /* Start position for animation */
+  font-size: 16px; /* Adjust as needed for loading message */
+  position: absolute; /* Essential for 'right' property to work */
+}
+
+
+.blue {
+  color: #3b82f6 !important;
+}
+
+.dark-theme .blue {
+  color: #d1fe00;
+}
+
+
 
 .Blue {
 
@@ -226,6 +314,7 @@ nav,
 }
 
 .header {
+  font-family: "Space Grotesk", sans-serif;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -236,9 +325,11 @@ nav,
 }
 
 .header__para {
-  font-size: 24px;
+  font-family: "Smooch Sans", sans-serif;
+  font-size: 28px;
   line-height: 2;
   max-width: 450px;
+  color: black;
 }
 
 @keyframes float {
@@ -290,9 +381,9 @@ nav,
 }
 
 .mail__btn {
-  width: 70px;
-  height: 70px;
-  font-size: 32px;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
   border-radius: 50%;
   border: none;
   background-color: #242424;
@@ -413,8 +504,8 @@ nav {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  
+  margin : 0 auto;
   padding: 0 20px;
   height: 100px;
 
@@ -429,20 +520,30 @@ nav {
   width: 100px;
   height: 100px;
   filter: none;
-  margin-top: 20px
+  margin-top: 20px;
+  margin-right: auto;
+  position: fixed;
+  top: 32px;
+  left: 40px;
+ 
 }
 
 .nav__link--list {
+  
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+  align-items: right;
+  justify-content: right;
+  
   overflow: hidden;
+  top: 32px;
+  right: 70px;
+  
 }
 
 .nav__link {
   margin: 0 12px;
+  
 }
 
 .nav__link--anchor {
@@ -453,6 +554,7 @@ nav {
   font-weight: 700;
   text-decoration: none;
   overflow: hidden;
+  
 }
 
 
@@ -495,15 +597,12 @@ nav {
 }
 
 .contrast__btn {
-  
-  cursor: pointer;
-  font-size: 32px;
-  
+    cursor: pointer;
+  font-size: 24px;
   z-index: 100;
   visibility: visible;
-  width: 70px;
-  height: 70px;
-  
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   border: none;
  position: fixed;
@@ -517,6 +616,7 @@ nav {
 @supports (container-type: scroll-state) {
   nav {
     background-color: transparent;
+    backdrop-filter: blur(25px);
     transition: background-color 1s ease;
   }
 }
@@ -621,17 +721,21 @@ nav {
 }
 
 .modal__title {
+  font-family: "Space Grotesk", sans-serif;
   font-size: 26px;
 }
 
 .modal__sub-title {
+  font-family: "Space Grotesk", sans-serif;
   margin: 12px 0 24px 0;
   font-size: 14px;
 }
 
 .modal__para {
+  font-family: "Smooch Sans", sans-serif;
   margin-bottom: 12px;
   line-height: 1.75;
+  font-size: 18px;
 }
 
 .form__item {
@@ -723,9 +827,11 @@ nav {
 
 
 .section__title {
+  font-family: "Space Grotesk", sans-serif;
   text-align: center;
   font-size: 48px;
   margin-bottom: 60px;
+  color: #3b82f6;
 }
 
 .project {
@@ -783,7 +889,8 @@ nav {
   height: 100%;
   display: flex;
   flex-direction: column;
-  
+  font-family: "Smooch Sans", sans-serif;
+  font-size: 24px;
   justify-content: center;
   align-items: center;
   z-index: 2;
@@ -812,13 +919,22 @@ nav {
 }
 
 .project__description--title {
+   font-family: "Space Grotesk", sans-serif;
   font-size: 40px;
   color: white;
 }
 
 .project__description--sub-title {
   margin-top: 8px;
-  color: rgb(240, 98, 33);
+  color: #d1fe00;
+  text-shadow: black 1px 0 10px;
+}
+
+.project__description--para {
+  margin: 8px;
+  color: #d1fe00;
+  text-shadow: black 5px 0 20px;
+  font-size: 24px;
 }
 
 .project__description--link {
@@ -831,8 +947,8 @@ nav {
   font-size: 20px;
   margin-right: 16px;
   pointer-events: auto;
-  color: black;
-  text-shadow: #d1fe00 1px 0 10px;
+  color: whitesmoke;
+  
 }
 
 
@@ -875,9 +991,9 @@ nav {
 */
 footer {
   position: relative;
-  background-color: black;
+  background-color: white;
   display: flex;
-  padding: 6% 0;
+  padding: 1.5% 0;
 
 }
 
@@ -885,12 +1001,13 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 
 .footer__logo--img {
   width: 100px;
   height: auto;
-  filter: invert(1);
+  
 }
 
 .footer__social--list {
@@ -902,11 +1019,11 @@ footer {
 }
 
 .footer__social--link {
-  color: #d1fe00;
+  color: black;
 }
 
 .footer__copyright {
-  color: white;
+  color: black;
 }
 
 /* 
@@ -989,7 +1106,8 @@ footer {
   font-weight: 700;
   opacity: 0;
   transition: all 300ms ease;
-  color: #d1fe00;
+  color: #3b82f6;
+  font-family: "Smooch Sans", sans-serif;
 
 }
 
@@ -1049,6 +1167,7 @@ footer {
   }
 
   .header__para {
+    
     font-size: 18px;
   }
 
@@ -1060,9 +1179,10 @@ footer {
     display: block;
     opacity: 0;
     transform: translateY(20px);
-
+    font-family: "Smooch Sans", sans-serif;
     transition: all 300ms ease;
     margin: 16px 0;
+    
   }
 }
 
@@ -1159,13 +1279,13 @@ footer {
 
 
 .dark-theme footer {
-  background-color: white;
+  background-color: black;
 }
 
 
 .footer__social--link {
   text-shadow: 0 19px 0 white;
-  color: #d1fe00;
+  color: black;
   font-size: 19px;
   text-transform: uppercase;
   font-weight: 700;
@@ -1191,8 +1311,8 @@ footer {
 }
 
 .dark-theme .footer__social--link {
-  text-shadow: 0 19px 0 #3b82f6;
-  color: black;
+  text-shadow: 0 19px 0 white;
+  color: #d1fe00;
   font-size: 19px;
   text-transform: uppercase;
   font-weight: 700;
@@ -1221,11 +1341,12 @@ footer {
 
 .dark-theme .footer__social--link,
 .dark-theme .footer__copyright {
-  color: #242424;
+  color: #d1fe00;
 }
 
 .dark-theme .footer__logo--img {
   filter: none;
+  filter: invert(1);
 }
 
 
@@ -1317,3 +1438,5 @@ footer {
   animation: down 0.3s reverse;
   animation-delay: calc(var(--sibling-index) * 0.05s);
 }
+
+

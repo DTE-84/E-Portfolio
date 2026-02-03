@@ -1,23 +1,32 @@
-function moveBackground(event) {
-  const shapes = document.querySelectorAll(".shape");
-  const x = event.clientX / 20;
-  const y = event.clientY / 20;
-
-  for (let i = 0; i < shapes.length; ++i) {
-    const isOdd = i % 2 !== 0;
-    const boolInt = isOdd ? -1 : 1;
-    
-    shapes[i].style.transform = `translate(${x * boolInt}px, ${y * boolInt}px) rotate(${x * boolInt * 10}deg)`
-  }
-}
-
-// 1. Foundation Variables
-let isModalOpen = false;
-let slideIndex = 1;
-let slideTimeout;
-const scaleFactor = 1 / 20;
-
 document.addEventListener("DOMContentLoaded", () => {
+    // New preloader logic
+    document.body.classList.add("no-scroll"); // Prevent scrolling immediately
+
+    const preloader = document.getElementById('preloader');
+    const mainContent = document.getElementById('main-content');
+
+    function hidePreloader() {
+        if (preloader) {
+            preloader.classList.add('preloader--hidden');
+            // Remove the preloader from the DOM after its transition ends
+            preloader.addEventListener('transitionend', () => {
+                preloader.remove();
+            });
+        }
+        if (mainContent) {
+            mainContent.style.display = 'block'; // Make it visible
+            void mainContent.offsetWidth; // Force reflow
+            mainContent.style.opacity = '1';    // Fade it in
+        }
+        document.body.classList.remove("no-scroll"); // Re-enable scrolling
+        
+        // Ensure carousel starts after preloader is hidden
+        showSlides(slideIndex); 
+    }
+
+    // Set timeout to hide preloader after 3 seconds
+    setTimeout(hidePreloader, 3000);
+
     const dots = document.querySelectorAll(".dot");
     dots.forEach((dot, index) => {
         dot.onclick = () => currentSlide(index + 1);
@@ -36,7 +45,57 @@ document.addEventListener("DOMContentLoaded", () => {
             letter.style.setProperty('--sibling-index', index);
         });
     });
+
+    // Initial Modal Logic - Merged
+    const initialModalOverlay = document.getElementById('initialModalOverlay');
+    const initialModalContent = document.querySelector('.initial-modal-content');
+    const myJourneyButton = document.getElementById('myJourneyButton');
+    const shapes = document.querySelectorAll('.shape'); 
+
+    if (initialModalOverlay && initialModalContent) {
+        initialModalOverlay.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; 
+
+       
+        shapes.forEach(shape => shape.classList.add('visible'));
+
+        
+        setTimeout(() => {
+            initialModalContent.classList.add('show-content');
+        }, 100); 
+    }
+
+    if (myJourneyButton) {
+        myJourneyButton.addEventListener('click', () => {
+            if (initialModalOverlay) {
+                initialModalOverlay.classList.add('hidden'); 
+            }
+            document.body.style.overflow = 'auto'; 
+            
+            shapes.forEach(shape => shape.classList.remove('visible'));
+        });
+    }
 });
+
+
+function moveBackground(event) {
+  const shapes = document.querySelectorAll(".shape");
+  const x = event.clientX / 20;
+  const y = event.clientY / 20;
+
+  for (let i = 0; i < shapes.length; ++i) {
+    const isOdd = i % 2 !== 0;
+    const boolInt = isOdd ? -1 : 1;
+    
+    shapes[i].style.transform = `translate(${x * boolInt}px, ${y * boolInt}px) rotate(${x * boolInt * 10}deg)`
+  }
+}
+
+// 1. Foundation Variables
+let isModalOpen = false;
+let slideIndex = 1;
+let slideTimeout;
+const scaleFactor = 1 / 20;
 
 
 function toggleModal() {
@@ -122,11 +181,6 @@ function toggleMenu() {
     }
 }
 
-// 4. Initialize everything
-window.onload = () => {
-    showSlides(slideIndex);
-};
-
 function contact(event) {
    event.preventDefault();
    const loading = document.querySelector(".modal__overlay--loading");
@@ -156,35 +210,3 @@ function contact(event) {
           );
         });
     }
-
-// Initial Modal Logic
-document.addEventListener('DOMContentLoaded', () => {
-    const initialModalOverlay = document.getElementById('initialModalOverlay');
-    const initialModalContent = document.querySelector('.initial-modal-content');
-    const myJourneyButton = document.getElementById('myJourneyButton');
-    const shapes = document.querySelectorAll('.shape'); 
-
-    if (initialModalOverlay && initialModalContent) {
-        initialModalOverlay.classList.remove('hidden');
-        document.body.style.overflow = 'hidden'; 
-
-       
-        shapes.forEach(shape => shape.classList.add('visible'));
-
-        
-        setTimeout(() => {
-            initialModalContent.classList.add('show-content');
-        }, 100); 
-    }
-
-    if (myJourneyButton) {
-        myJourneyButton.addEventListener('click', () => {
-            if (initialModalOverlay) {
-                initialModalOverlay.classList.add('hidden'); 
-            }
-            document.body.style.overflow = 'auto'; 
-            
-            shapes.forEach(shape => shape.classList.remove('visible'));
-        });
-    }
-});
