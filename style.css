@@ -98,37 +98,52 @@ textarea:focus {
   border-color: rgb(25, 94, 221);
 }
 
-#preloader {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out; /* Added transition */
+
+/* 1. The Animation Definition */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(-30px); /* Slides down from 30px up */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.wrap {
-  display: block !important;
-   background-color: red;
-    min-width: 200px;
-     min-height: 100px; 
-     border: 2px solid
-  white;
+/* 2. Global Entrance State */
+/* Add your nav selector here as well */
+nav, 
+.nav__link, .nav__link--list,
+.title, 
+.header__para, 
+ .social__list, 
+.scroll__icon {
+  animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0; /* Keeps items hidden before they animate */
 }
 
-.bg {
-  display: block !important;
-  background-color: red;
+/* 3. The Staggered Schedule */
+nav { 
+  animation-delay: 6s; 
 }
 
- #preloader.preloader--hidden {
-          display: none !important; /* Forceful removal to ensure it doesn't block content */
-        }
+.title:first-of-type { 
+  animation-delay: 6.3s; /* "Hey," */
+}
+
+.title.blue { 
+  animation-delay: 6.5s; /* "I'm Drew Ernst" */
+}
+
+.header__para { 
+  animation-delay: 6.9s; /* The bio paragraph */
+}
+
+/* This targets the social links container or individual links */
+.social__list, .social__link { 
+  animation-delay: 7.3s; 
+}
 
 .container {
   padding: 50px 0;
@@ -165,24 +180,7 @@ textarea:focus {
   color: black;
 }
 
-/* Preloader specific animations */
-.loading .title {
-  display: block !important;
-  background-color: #3b82f6;
-  font-size: 24px; /* Adjust as needed for loading message */
-  right: 30px; /* Start position for animation */
-  opacity: 0; /* Initial state, as per @keyframes title */
-  position: absolute; /* Essential for 'right' property to work */
-}
 
-.loading .text {
-  display: block !important;
-  background-color: purple;
-  opacity: 0; /* Initial state, as per @keyframes title */
-  right: 30px; /* Start position for animation */
-  font-size: 16px; /* Adjust as needed for loading message */
-  position: absolute; /* Essential for 'right' property to work */
-}
 
 
 .blue {
@@ -1439,4 +1437,125 @@ footer {
   animation-delay: calc(var(--sibling-index) * 0.05s);
 }
 
+#main-content {
+       opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+
+ #preloader.preloader--hidden {
+       opacity: 0;
+       pointer-events: none;
+     }
+
+ #preloader {
+       position: fixed;
+       top: 0;
+       left: 0;
+       width: 100vw; /* Use viewport width */
+       height: 100vh; /* Use viewport height */
+      background-color: black;
+      display: flex; /* Use flexbox for centering */
+      justify-content: center;
+      align-items: center;
+      z-index: 999999;
+      transition: opacity 0.5s ease; /* Animate opacity only */
+    }
+
+    #preloader.preloader--hidden {
+      opacity: 0; /* Fade out */
+      pointer-events: none; /* Allow clicks to pass through */
+    }
+
+    #preloader .preloader-bar {
+      width: 100%; /* Span the full width */
+      background: #306f99;
+      padding: 20px 0;
+      box-shadow: inset 0 0 35px 20px #bce4ff;
+      text-align: center; /* Center the content inside */
+      animation: preloader-bg-anim 5s linear infinite;
+    }
+
+     #preloader .preloader-text-container {
+      position: relative;
+      height: 24px; /* Set a fixed height */
+      width: 220px; /* Set a fixed width */
+      display: inline-block; /* Allows centering */
+      color: #eaf7ff;
+      text-shadow: 0 0 6px #eaf7ff;
+      font-size: 16px; /* Control text size here */
+    }
+
+    #preloader .preloader-text-container span {
+      display: block;
+      text-transform: uppercase;
+      position: absolute;
+      height: 100%;
+     line-height: 24px; /* Match the container height */
+      width: 100%;
+      opacity: 0; /* Animation will make it visible */
+      right: 0;
+    }
+
+     #preloader .preloader-text-container span.title {
+      animation: preloader-text-anim 3.4s linear infinite;
+    }
+    
+    #preloader .preloader-text-container span.text {
+      animation: preloader-text-anim 3.4s linear 1.7s infinite;
+    }
+
+
+    
+
+ #preloader .bg {
+              background: #306f99;
+             width: 100%; /* Make it full-width */
+              padding: 30px 0; /* Adjust padding for a full-width block */
+              box-shadow: inset 0 0 45px 30px #bce4ff;
+             animation: preloader-bg-anim 5s linear infinite;
+              text-align: center; /* Center the .loading div inside */
+            }
+
+     /* This is the container for the animated text */
+    #preloader .loading {
+             position: relative;
+              text-shadow: 0 0 6px #eaf7ff;
+              height: 50px;
+             width: 200px;
+             color: #eaf7ff;
+              display: inline-block; /* Allows the parent's text-align: center to work */
+              text-align: right; /* Keeps text aligned to the right inside this box */
+            }
+
+    /* Style for BOTH text spans inside the preloader */
+    #preloader .loading span {
+      display: block;
+      text-transform: uppercase;
+      position: absolute;
+      height: 20px;
+      line-height: 20px;
+      width: 200px;
+      opacity: 0; /* Animation will make it visible */
+      right: 30px;
+      font-size: 16px;
+    }
+
+    
+
+   @keyframes preloader-text-anim {
+      0%   { opacity:0; transform: translateX(50px); }
+      48%  { opacity:0; transform: translateX(50px); }
+      52%  { opacity:1; transform: translateX(0px); }
+      70%  { opacity:1; transform: translateX(0px); }
+      100% { opacity:0; transform: translateX(0px); }
+    }
+   
+    /* Keyframes for the background color pulse */
+     @keyframes preloader-bg-anim {
+     0%   { background-color:#306f99; }
+      50%  { background-color:#19470f; }
+      90%  { background-color:#734a10; }
+      100% { background-color:#306f99; }
+    }
 
