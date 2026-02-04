@@ -125,24 +125,24 @@ nav,
 
 /* 3. The Staggered Schedule */
 nav { 
-  animation-delay: 6s; 
+  animation-delay: 2.5s; 
 }
 
 .title:first-of-type { 
-  animation-delay: 6.3s; /* "Hey," */
+  animation-delay: 3.3s; /* "Hey," */
 }
 
 .title.blue { 
-  animation-delay: 6.5s; /* "I'm Drew Ernst" */
+  animation-delay: 3.5s; /* "I'm Drew Ernst" */
 }
 
 .header__para { 
-  animation-delay: 6.9s; /* The bio paragraph */
+  animation-delay: 3.9s; /* The bio paragraph */
 }
 
 /* This targets the social links container or individual links */
 .social__list, .social__link { 
-  animation-delay: 7.3s; 
+  animation-delay: 4.3s; 
 }
 
 .container {
